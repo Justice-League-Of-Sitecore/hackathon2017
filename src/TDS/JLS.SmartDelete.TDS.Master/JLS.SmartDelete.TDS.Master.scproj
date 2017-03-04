@@ -31,8 +31,8 @@
     </SitecoreDeployFolder>
     <SitecoreWebUrl>
     </SitecoreWebUrl>
-    <SitecoreAccessGuid>52734064-5f5e-42a2-9235-64aef8a19a0e</SitecoreAccessGuid>
-    <InstallSitecoreConnector>False</InstallSitecoreConnector>
+    <SitecoreAccessGuid>142c81dc-a152-498a-b2a1-290340abdcdb</SitecoreAccessGuid>
+    <InstallSitecoreConnector>True</InstallSitecoreConnector>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>false</DebugSymbols>
