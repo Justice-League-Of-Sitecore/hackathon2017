@@ -37,6 +37,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Constants", "Constants", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLS.Foundation.Workflow", "src\Foundation\Workflow\JLS.Foundation.Workflow\JLS.Foundation.Workflow.csproj", "{3B518392-B64B-46FC-8098-70EEC94C4840}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{B24D9966-9D8D-4D2C-BA3D-782DA52A6F14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLS.Foundation.Serialization", "src\Foundation\Serialization\JLS.Foundation.Serialization\JLS.Foundation.Serialization.csproj", "{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Cacy|Any CPU = Cacy|Any CPU
@@ -121,6 +125,16 @@ Global
 		{3B518392-B64B-46FC-8098-70EEC94C4840}.Stafford|Any CPU.Build.0 = Stafford|Any CPU
 		{3B518392-B64B-46FC-8098-70EEC94C4840}.Stocker|Any CPU.ActiveCfg = Stocker|Any CPU
 		{3B518392-B64B-46FC-8098-70EEC94C4840}.Stocker|Any CPU.Build.0 = Stocker|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Cacy|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Cacy|Any CPU.Build.0 = Release|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Stafford|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Stafford|Any CPU.Build.0 = Release|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Stocker|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE}.Stocker|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,5 +153,7 @@ Global
 		{CF369742-1E33-4E3A-B2B5-4485F05C9CF0} = {B27F382F-1A3A-4B60-80C2-E3D0FC36C553}
 		{3CE6143D-BAE4-4C3E-9EC0-EC89459CDC36} = {B27F382F-1A3A-4B60-80C2-E3D0FC36C553}
 		{3B518392-B64B-46FC-8098-70EEC94C4840} = {CF369742-1E33-4E3A-B2B5-4485F05C9CF0}
+		{B24D9966-9D8D-4D2C-BA3D-782DA52A6F14} = {B27F382F-1A3A-4B60-80C2-E3D0FC36C553}
+		{D0C3C580-B4B0-4FB8-B66E-23EE589B76AE} = {B24D9966-9D8D-4D2C-BA3D-782DA52A6F14}
 	EndGlobalSection
 EndGlobal

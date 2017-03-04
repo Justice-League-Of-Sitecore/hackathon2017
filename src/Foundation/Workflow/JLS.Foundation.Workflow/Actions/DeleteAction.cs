@@ -1,9 +1,8 @@
-﻿using System;
-using JLS.Foundation.Constants;
-using Sitecore.Configuration;
+﻿using JLS.Foundation.Constants;
 using Sitecore.Data.Items;
 using Sitecore.Workflows;
 using Sitecore.Workflows.Simple;
+using System;
 
 namespace JLS.Foundation.Workflow.Actions
 {
@@ -17,9 +16,12 @@ namespace JLS.Foundation.Workflow.Actions
             if (item != null && IsApproved(item) && item[SmartDeleteConstants.FieldIds.DeleteRequested].Equals("1"))
             {
                 args.CommentFields.Add($"{item.ID.ToShortID()}-{DateTime.Now.Ticks}", $"{Sitecore.Context.User.LocalName} approved the deletion of the item: {item.Name}.");
-            
-                // TO DO: Serialize
 
+                // TO DO: Serialize
+                if (!Serialization.SerializationManager.SerializeItem(item))
+                {
+                    //log
+                }
 
                 //if (Settings.RecycleBinActive)
                 //    item.Recycle();

@@ -1,102 +1,55 @@
 ----item----
 version: 1
-id: {0154CD80-3F40-42D8-BDA0-30CAAF7140D2}
+id: {9BB54FED-53E9-4E97-9CAA-6171FE52C142}
 database: master
-path: /sitecore/system/Workflows/SmartDelete/Draft/Submit
-parent: {3EC43917-C405-4508-A895-A631D6D9AC3F}
-name: Submit
+path: /sitecore/system/Workflows/SmartDelete/Awaiting Approval
+parent: {E7D28CE6-9CE8-4A8F-AF87-9FCDD310EF84}
+name: Awaiting Approval
 master: {00000000-0000-0000-0000-000000000000}
-template: {CB01F9FC-C187-46B3-AB0B-97A8468D8303}
-templatekey: Command
-created: 20170304T094155Z
+template: {4B7E2DA9-DE43-4C83-88C3-02F042031D04}
+templatekey: State
+created: 20170304T131600Z
 
-----field----
-field: {DCBEBC58-6124-4100-A248-FC717D6C78D5}
-name: Next state
-key: next state
-content-length: 38
-
-{9BB54FED-53E9-4E97-9CAA-6171FE52C142}
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 23
+content-length: 34
 
-office/16x16/submit.png
+applications/16x16/document_ok.png
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 2
+
+20
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{CB01F9FC-C187-46B3-AB0B-97A8468D8303}
 ----field----
 field: {DEC8D2D5-E3CF-48B6-A653-8E69E2716641}
 name: __Security
 key: __security
-content-length: 94
+content-length: 130
 
-ar|sitecore\Sitecore Client Authoring|pd|+workflowCommand:execute|pe|+workflowCommand:execute|
-----version----
-language: da
-version: 1
-revision: f52cb60a-0c90-48a6-89f8-70185af82915
-
-----field----
-field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
-name: __Display name
-key: __display name
-content-length: 4
-
-Send
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
-----field----
-field: {25BED78C-4957-4165-998A-CA1B52F67497}
-name: __Created
-key: __created
-content-length: 16
-
-20160729T133419Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
-----field----
-field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
-name: __Revision
-key: __revision
-content-length: 36
-
-f52cb60a-0c90-48a6-89f8-70185af82915
-----field----
-field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
-name: __Updated
-key: __updated
-content-length: 16
-
-20160729T133419Z
-----field----
-field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
-name: __Updated by
-key: __updated by
-content-length: 14
-
-sitecore\admin
+ar|sitecore\Sitecore Client Authoring|pd|+workflowState:delete|+workflowState:write|pe|+workflowState:delete|+workflowState:write|
 ----version----
 language: de-DE
 version: 1
-revision: ad139c39-0306-410e-963a-479c7ace8b1a
+revision: 439095ed-2060-458b-8098-05cbf8f6e6a3
 
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
-content-length: 10
+content-length: 17
 
-Einreichen
+Freigabe erwarten
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -108,9 +61,9 @@ sitecore\admin
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 16
+content-length: 34
 
-20160729T133550Z
+20120706T121311:634771735911491941
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -124,14 +77,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ad139c39-0306-410e-963a-479c7ace8b1a
+439095ed-2060-458b-8098-05cbf8f6e6a3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 16
+content-length: 34
 
-20160729T133550Z
+20120706T121311:634771735911491941
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -142,29 +95,15 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 75721d98-dd16-40e6-a6f9-8c98cef7fa7b
+revision: 439b7162-115c-4ac1-ae18-45aed821acc5
 
-----field----
-field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
-name: __Display name
-key: __display name
-content-length: 0
-
-
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 16
+content-length: 34
 
-20140722T112705Z
+20080313T152351:633410186315794839
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -178,33 +117,33 @@ name: __Revision
 key: __revision
 content-length: 36
 
-75721d98-dd16-40e6-a6f9-8c98cef7fa7b
+439b7162-115c-4ac1-ae18-45aed821acc5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 16
+content-length: 34
 
-20170304T132036Z
+20080313T152351:633410186315794839
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
 content-length: 14
 
-sitecore\Admin
+sitecore\admin
 ----version----
 language: ja-JP
 version: 1
-revision: d09d69c1-8028-4e75-9143-3d76dbf49c2a
+revision: 3223f8ac-51e8-48e9-8308-97623c2d6860
 
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
-content-length: 2
+content-length: 4
 
-投稿
+承認待ち
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -216,9 +155,9 @@ sitecore\admin
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
-content-length: 16
+content-length: 34
 
-20160729T133721Z
+20120706T122524:634771743248033491
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -232,14 +171,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d09d69c1-8028-4e75-9143-3d76dbf49c2a
+3223f8ac-51e8-48e9-8308-97623c2d6860
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 16
+content-length: 34
 
-20160729T133721Z
+20120706T122524:634771743248033491
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
