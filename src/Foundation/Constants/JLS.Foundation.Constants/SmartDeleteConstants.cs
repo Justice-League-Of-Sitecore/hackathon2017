@@ -7,6 +7,8 @@ namespace JLS.Foundation.Constants
         public struct TemplateIds
         {
             public static ID ItemBase = new ID("{FA3E3E0B-0ADC-4FC5-97ED-354AF59FB964}");
+            public static ID DeletionWorkflow = new ID("{E7D28CE6-9CE8-4A8F-AF87-9FCDD310EF84}");
+            public static ID DeletionWorkflowState = new ID("{9BB54FED-53E9-4E97-9CAA-6171FE52C142}");
         }
         public struct FieldIds
         {
