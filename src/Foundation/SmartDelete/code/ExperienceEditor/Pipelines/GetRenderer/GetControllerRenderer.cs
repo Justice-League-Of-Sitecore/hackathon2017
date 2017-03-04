@@ -1,4 +1,5 @@
-﻿using Sitecore.Mvc.Pipelines.Response.GetRenderer;
+﻿using JLS.Foundation.Constants;
+using Sitecore.Mvc.Pipelines.Response.GetRenderer;
 using Sitecore.Mvc.Presentation;
 
 namespace JLS.Foundation.SmartDelete.ExperienceEditor.Pipelines.GetRenderer

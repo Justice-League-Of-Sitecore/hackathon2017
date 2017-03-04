@@ -139,11 +139,19 @@
       <DependentUpon>SmartDelete.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="sitecore modules\Shell\SmartDelete\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Stafford.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Constants\JLS.Foundation.Constants\JLS.Foundation.Constants.csproj">
+      <Project>{17624966-0e58-475a-8d26-a8b8cecd843d}</Project>
+      <Name>JLS.Foundation.Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Workflow\JLS.Foundation.Workflow\JLS.Foundation.Workflow.csproj">
+      <Project>{3b518392-b64b-46fc-8098-70eec94c4840}</Project>
+      <Name>JLS.Foundation.Workflow</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
