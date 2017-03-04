@@ -1,0 +1,45 @@
+----item----
+version: 1
+id: {C37067E5-F16E-434F-9EAF-C1E414196C22}
+database: master
+path: /sitecore/content/Smart Delete Demo Home/page-content/HeroBanner
+parent: {9A134953-321A-4C56-AB79-42FD56A415D5}
+name: HeroBanner
+master: {00000000-0000-0000-0000-000000000000}
+template: {85E60D85-5374-4381-B8E6-3E8CC5834746}
+templatekey: HeroBanner
+created: 20170304T043416:636241988564670000
+
+----version----
+language: en
+version: 1
+revision: 9fcff518-0e9d-41c8-ab07-404c657fa564
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T043416Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9fcff518-0e9d-41c8-ab07-404c657fa564
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T043432Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
