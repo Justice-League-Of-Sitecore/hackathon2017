@@ -56,7 +56,7 @@ namespace JLS.SmartDelete.Website.sitecore.shell.Applications.SmartDelete
         {
             var descendents = item.Axes.GetDescendants();
             //loop through, exclude branches/system, create checkbox for each template
-            foreach (var d in descendents)
+            foreach (Item d in descendents)
             {
                 if (d.Paths.Path.ToLower().Contains("sitecore/templates/branches")
                     || d.Paths.Path.ToLower().Contains("sitecore/templates/system")
@@ -65,11 +65,15 @@ namespace JLS.SmartDelete.Website.sitecore.shell.Applications.SmartDelete
                     || d.Paths.Path.ToLower().Contains("__standard values")
                     || d.Paths.Path.ToLower().Contains("/smart delete")) continue;
 
-                var listItem = new ListItem();
-                var iconImage = ThemeManager.GetIconImage(d, 16, 16, "absmiddle", "0px 2px 0px 0px");
-                listItem.Text = $"{iconImage} {d.Paths.Path}";
-                listItem.Value = d.ID.ToString();
-                chkBoxList.Items.Add(listItem);
+                //only add templates
+                if (d.TemplateID == new Sitecore.Data.ID("{AB86861A-6030-46C5-B394-E8F99E8B87DB}"))
+                {
+                    var listItem = new ListItem();
+                    var iconImage = ThemeManager.GetIconImage(d, 16, 16, "absmiddle", "0px 2px 0px 0px");
+                    listItem.Text = $"{iconImage} {d.Paths.Path}";
+                    listItem.Value = d.ID.ToString();
+                    chkBoxList.Items.Add(listItem);
+                }
             }
         }
 
@@ -87,9 +91,12 @@ namespace JLS.SmartDelete.Website.sitecore.shell.Applications.SmartDelete
                 var item = masterDb.GetItem(new ID(selectedItem));
                 if (item == null) continue;
                 var existingTemplates = item.Fields["__Base template"].Value;
-                item.Editing.BeginEdit();
-                item.Fields["__Base template"].Value = $"{existingTemplates}|{SmartDeleteConstants.TemplateIds.ItemBase}";
-                item.Editing.EndEdit();
+                if (!existingTemplates.Contains(SmartDeleteConstants.TemplateIds.ItemBase.ToString()))
+                {
+                    item.Editing.BeginEdit();
+                    item.Fields["__Base template"].Value = $"{existingTemplates}|{SmartDeleteConstants.TemplateIds.ItemBase}";
+                    item.Editing.EndEdit();
+                }
             }
         }
     }
