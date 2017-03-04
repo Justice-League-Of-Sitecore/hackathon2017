@@ -2,6 +2,7 @@
 using Sitecore.Configuration;
 using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
+using Sitecore.SecurityModel;
 using Sitecore.Web.UI.Sheer;
 
 namespace JLS.Foundation.SmartDelete.Shell.Pipelines

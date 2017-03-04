@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("JLS.Feature.SmartDelete")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Justice League of Sitecore")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("JLS.Feature.SmartDelete")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
