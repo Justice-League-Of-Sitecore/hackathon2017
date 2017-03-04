@@ -14,7 +14,10 @@ namespace JLS.Foundation.SmartDelete.ExperienceEditor.Pipelines.GetRenderer
         public override void Process(GetRendererArgs args)
         {
             if (args.Result != null)
+            {
+                base.GetRenderer(args.Rendering, args);
                 return;
+            }
 
             args.Result = GetRenderer(args.Rendering, args);
         }
@@ -48,6 +51,9 @@ namespace JLS.Foundation.SmartDelete.ExperienceEditor.Pipelines.GetRenderer
         /// <returns></returns>
         private string GetPath(Database database, Rendering rendering, string path)
         {
+            if (Context.PageMode.IsPreview && rendering.Item?[SmartDeleteConstants.FieldIds.DeleteRequested] == "1")
+                return SmartDeleteConstants.Views.BlankViewPath;
+
             if (!RenderingExtensions.RequiresDatasource(rendering.RenderingItem) ||
                 RenderingExtensions.DatasourceExists(database, rendering.DataSource))
                 return path;

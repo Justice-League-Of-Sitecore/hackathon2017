@@ -1,9 +1,13 @@
 ﻿using JLS.Foundation.Constants;
 using Sitecore;
 using Sitecore.Configuration;
+using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
+using Sitecore.SecurityModel;
+using Sitecore.Shell.Applications.ContentEditor;
 using Sitecore.Web.UI.Sheer;
+using Sitecore.Workflows;
 
 namespace JLS.Foundation.SmartDelete.Shell.Pipelines
 {
@@ -18,12 +22,14 @@ namespace JLS.Foundation.SmartDelete.Shell.Pipelines
             var database = Factory.GetDatabase(args.Parameters["database"]);
             var item = database?.GetItem(args.Parameters["items"], LanguageManager.GetLanguage(args.Parameters["language"]));
 
-            if (item == null || item.Fields[SmartDeleteConstants.FieldIds.DeleteRequested] != null || item.Paths.IsContentItem)
+            if (item?.Fields[SmartDeleteConstants.FieldIds.DeleteRequested] != null && item.Paths.IsContentItem)
             {
-                if (args.Aborted)
-                    return;
+                RequestItemDeletion(args, item);
+                return;
             }
 
+            // if the item does not contain the Delete Requested Checkbox, is not a Content Item and does not pass the
+            // other rules below, perform the regular delete.
             base.Confirm(args);
         }
 
@@ -43,18 +49,25 @@ namespace JLS.Foundation.SmartDelete.Shell.Pipelines
                 return;
             }
 
-            if (item[SmartDeleteConstants.FieldIds.DeleteRequested].Equals("0"))
+            if (!((CheckboxField) item.Fields[SmartDeleteConstants.FieldIds.DeleteRequested]).Checked)
             {
-                //using (new SecurityDisabler())
-                //{
-                //    item.Editing.BeginEdit();
+                using (new SecurityDisabler())
+                {
+                    item.Editing.BeginEdit();
                     item[SmartDeleteConstants.FieldIds.DeleteRequested] = "1";
-                //    item.Editing.EndEdit();
-                //}
+
+                    // Unpublish removes it from preview.
+                    item[FieldIDs.UnpublishDate] = System.DateTime.Now.ToString();
+                    item.Editing.EndEdit();
+                }
 
                 // Alert the Content Author that the request to delete the item has been submitted for review... 
                 // by the Workflow Master Approver
                 SheerResponse.Alert($"The request to delete \"{item.DisplayName}\" has been submitted for review.");
+
+                // Add Audit Message
+                var wfEvent = new WorkflowEvent(item[FieldIDs.WorkflowState], item[FieldIDs.WorkflowState], $"The request to delete \"{item.DisplayName}\" has been submitted for review.", Sitecore.Context.User.LocalName, System.DateTime.Now);
+
                 args.AbortPipeline();
             }
         }
