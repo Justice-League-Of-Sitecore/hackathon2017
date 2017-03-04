@@ -79,6 +79,10 @@
       <Project>{17624966-0e58-475a-8d26-a8b8cecd843d}</Project>
       <Name>JLS.Foundation.Constants</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Logging\JLS.Foundation.Logging\JLS.Foundation.Logging.csproj">
+      <Project>{13a82cca-583f-4ffd-a50e-3b208a1c72a2}</Project>
+      <Name>JLS.Foundation.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Serialization\JLS.Foundation.Serialization\JLS.Foundation.Serialization.csproj">
       <Project>{d0c3c580-b4b0-4fb8-b66e-23ee589b76ae}</Project>
       <Name>JLS.Foundation.Serialization</Name>

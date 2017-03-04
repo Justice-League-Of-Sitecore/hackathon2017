@@ -2,6 +2,7 @@
 using Sitecore.Diagnostics;
 using System;
 using System.IO;
+using JLS.Foundation.Logging;
 
 namespace JLS.Foundation.Serialization
 {
@@ -11,29 +12,29 @@ namespace JLS.Foundation.Serialization
 
         public static bool SerializeItem(Item itemToSerialize)
         {
-            //try
-            //{
-            //    if (!SerializationDirectoryExists())
-            //    {
-            //        //if (!CreateSerializationDirectory()) throw new Exception("Error creating serialization directory");
-            //    }
+            try
+            {
+                if (!SerializationDirectoryExists())
+                {
+                    if (!CreateSerializationDirectory()) throw new Exception("Error creating serialization directory");
+                }
 
-            //    if (itemToSerialize.HasChildren)
-            //    {
-            //        //if(!SerializeTree(itemToSerialize)) throw new Exception("Error serializing item children.");
-            //    }
-            //    else
-            //    {
+                if (itemToSerialize.HasChildren)
+                {
+                    if (!SerializeTree(itemToSerialize)) throw new Exception("Error serializing item children.");
+                }
+                else
+                {
                     Sitecore.Data.Serialization.Manager.DumpItem(SerializationDirectory, itemToSerialize);
-            //    }
+                }
 
                 return true;
-            //}
-            //catch (Exception ex)
-            //{
-            //   Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
-            //    return false;
-            //}
+            }
+            catch (Exception ex)
+            {
+                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
+                return false;
+            }
         }
 
         private static bool SerializeTree(Item rootItemToSerialize)
@@ -52,7 +53,7 @@ namespace JLS.Foundation.Serialization
             }
             catch (Exception ex)
             {
-                Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
+                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
                 return false;
             }
         }
@@ -74,12 +75,12 @@ namespace JLS.Foundation.Serialization
             }
             catch (IOException ioex)
             {
-                Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error IO occurred creating the serialization directory: {ioex.Message}", ioex);
+                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An IO error occurred creating the serialization directory: {ioex.Message}", ioex);
                 return false;
             }
             catch (Exception ex)
             {
-                Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error IO occurred creating the serialization directory: {ex.Message}", ex);
+                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred creating the serialization directory: {ex.Message}", ex);
                 return false;
             }
         }

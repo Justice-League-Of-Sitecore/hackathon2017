@@ -1,4 +1,5 @@
 ﻿using JLS.Foundation.Constants;
+using JLS.Foundation.Logging;
 using Sitecore.Data.Items;
 using Sitecore.Workflows;
 using Sitecore.Workflows.Simple;
@@ -17,10 +18,10 @@ namespace JLS.Foundation.Workflow.Actions
             {
                 args.CommentFields.Add($"{item.ID.ToShortID()}-{DateTime.Now.Ticks}", $"{Sitecore.Context.User.LocalName} approved the deletion of the item: {item.Name}.");
 
-                // TO DO: Serialize
                 if (!Serialization.SerializationManager.SerializeItem(item))
                 {
-                    //log
+                    SmartDeleteLogger.Error("JLS.FOUNDATION.WORKFLOW: An error occurred serializing item during delete workflow.");
+                    return;
                 }
 
                 //if (Settings.RecycleBinActive)
@@ -33,7 +34,6 @@ namespace JLS.Foundation.Workflow.Actions
         private bool IsApproved(Item item)
         {
             var context = new WorkflowContext(Sitecore.Context.Data);
-
             return context.IsApproved(item);
         }
     }

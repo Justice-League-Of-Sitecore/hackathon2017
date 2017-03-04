@@ -30,18 +30,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stafford|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Cacy|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Stafford\</OutputPath>
+    <OutputPath>bin\Cacy\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Cacy|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stafford|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Cacy\</OutputPath>
+    <OutputPath>bin\Stafford\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,6 +73,12 @@
   <ItemGroup>
     <Compile Include="SerializationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Logging\JLS.Foundation.Logging\JLS.Foundation.Logging.csproj">
+      <Project>{13a82cca-583f-4ffd-a50e-3b208a1c72a2}</Project>
+      <Name>JLS.Foundation.Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
