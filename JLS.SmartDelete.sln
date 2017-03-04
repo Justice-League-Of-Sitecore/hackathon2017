@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14 
+# Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{8DED37E9-4F0B-428D-8EF5-08F9D8C0AAC8}"
@@ -60,7 +60,6 @@ Global
 		{8464E31A-A5E2-4787-9C97-6B8F78AB853B}.Stocker|Any CPU.Build.0 = Stocker|Any CPU
 		{A43EF4E7-C92F-4FB5-992B-A0AB4D446318}.Cacy|Any CPU.ActiveCfg = Cacy|Any CPU
 		{A43EF4E7-C92F-4FB5-992B-A0AB4D446318}.Cacy|Any CPU.Build.0 = Cacy|Any CPU
-		{A43EF4E7-C92F-4FB5-992B-A0AB4D446318}.Cacy|Any CPU.Deploy.0 = Cacy|Any CPU
 		{A43EF4E7-C92F-4FB5-992B-A0AB4D446318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A43EF4E7-C92F-4FB5-992B-A0AB4D446318}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A43EF4E7-C92F-4FB5-992B-A0AB4D446318}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
