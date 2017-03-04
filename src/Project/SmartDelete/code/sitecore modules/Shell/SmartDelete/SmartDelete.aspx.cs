@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using Sitecore.Sites;
 
 namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete
 {
@@ -48,6 +49,8 @@ namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete
             var url = site != null ? site.LoginPage : "";
             if (url.Length > 0)
                 Response.Redirect(url, true);
+            else
+                Response.Redirect("/sitecore", true);
             return false;
         }
 
