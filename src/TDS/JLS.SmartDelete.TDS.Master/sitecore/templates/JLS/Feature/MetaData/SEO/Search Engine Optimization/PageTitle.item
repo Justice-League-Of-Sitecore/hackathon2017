@@ -2,7 +2,7 @@
 version: 1
 id: {C7334B72-EE34-4F61-A196-0E13BA129BDA}
 database: master
-path: /sitecore/templates/JLS/Foundation/SEO/Search Engine Optimization/PageTitle
+path: /sitecore/templates/JLS/Feature/MetaData/SEO/Search Engine Optimization/PageTitle
 parent: {F75EE163-2C9E-4D06-9902-BD2296E4C334}
 name: PageTitle
 master: {00000000-0000-0000-0000-000000000000}

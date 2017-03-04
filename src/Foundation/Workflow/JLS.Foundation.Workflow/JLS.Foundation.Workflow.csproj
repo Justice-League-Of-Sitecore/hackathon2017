@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9433A9CA-E54C-4074-9E36-DEE171AD6CC5}</ProjectGuid>
+    <ProjectGuid>{3B518392-B64B-46FC-8098-70EEC94C4840}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JLS.Feature.SmartDelete</RootNamespace>
-    <AssemblyName>JLS.Feature.SmartDelete</AssemblyName>
+    <RootNamespace>JLS.Foundation.Workflow</RootNamespace>
+    <AssemblyName>JLS.Foundation.Workflow</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,34 +29,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stafford|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Stafford\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Cacy|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Cacy\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stocker|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Stocker\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.161221\lib\NET452\Sitecore.Kernel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -67,7 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\DeleteAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Constants\JLS.Foundation.Constants\JLS.Foundation.Constants.csproj">
+      <Project>{17624966-0e58-475a-8d26-a8b8cecd843d}</Project>
+      <Name>JLS.Foundation.Constants</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

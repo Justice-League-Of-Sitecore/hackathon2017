@@ -2,7 +2,7 @@
 version: 1
 id: {E02607E6-505A-4F1C-ABDC-18039AEB9882}
 database: master
-path: /sitecore/templates/JLS/Foundation/SEO/Search Engine Optimization/Keywords
+path: /sitecore/templates/JLS/Feature/MetaData/SEO/Search Engine Optimization/Keywords
 parent: {F75EE163-2C9E-4D06-9902-BD2296E4C334}
 name: Keywords
 master: {00000000-0000-0000-0000-000000000000}

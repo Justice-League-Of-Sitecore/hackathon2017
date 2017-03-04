@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JLS.Feature.SmartDelete")]
+[assembly: AssemblyTitle("JLS.Foundation.Workflow")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("JLS.Feature.SmartDelete")]
+[assembly: AssemblyProduct("JLS.Foundation.Workflow")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9433a9ca-e54c-4074-9e36-dee171ad6cc5")]
+[assembly: Guid("3b518392-b64b-46fc-8098-70eec94c4840")]
 
 // Version information for an assembly consists of the following four values:
 //
