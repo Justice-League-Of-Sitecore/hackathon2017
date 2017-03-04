@@ -20,7 +20,7 @@ namespace JLS.Foundation.Workflow.Actions
                 // TO DO: Serialize
                 if (!Serialization.SerializationManager.SerializeItem(item))
                 {
-                    // do we want to write to custom log or sitecore log?
+                    //log
                 }
 
                 //if (Settings.RecycleBinActive)

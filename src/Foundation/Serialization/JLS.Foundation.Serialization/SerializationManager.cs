@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Sitecore.Data.Items;
+using Sitecore.Diagnostics;
+using System;
 using System.IO;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
-using Sitecore.Data.Items;
 
 namespace JLS.Foundation.Serialization
 {
@@ -23,10 +18,9 @@ namespace JLS.Foundation.Serialization
                     if (!CreateSerializationDirectory()) throw new Exception("Error creating serialization directory");
                 }
 
-
                 if (itemToSerialize.HasChildren)
                 {
-                    //Sitecore.Data.Serialization.Manager.DumpTree();
+                    if(!SerializeTree(itemToSerialize)) throw new Exception("Error serializing item children.");
                 }
                 else
                 {
@@ -37,7 +31,28 @@ namespace JLS.Foundation.Serialization
             }
             catch (Exception ex)
             {
-                //log ex
+               Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
+                return false;
+            }
+        }
+
+        private static bool SerializeTree(Item rootItemToSerialize)
+        {
+            Assert.IsNotNull(rootItemToSerialize, "rootItemToSerialize");
+            try
+            {
+                foreach (var child in rootItemToSerialize.Axes.GetDescendants())
+                {
+                    Sitecore.Data.Serialization.Manager.DumpItem(SerializationDirectory, child);
+                }
+
+                Sitecore.Data.Serialization.Manager.DumpItem(SerializationDirectory, rootItemToSerialize);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
                 return false;
             }
         }
@@ -59,16 +74,14 @@ namespace JLS.Foundation.Serialization
             }
             catch (IOException ioex)
             {
-                //log ex
+                Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error IO occurred creating the serialization directory: {ioex.Message}", ioex);
                 return false;
             }
             catch (Exception ex)
             {
-                //log ex
+                Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error IO occurred creating the serialization directory: {ex.Message}", ex);
                 return false;
             }
-
-
         }
     }
 }
