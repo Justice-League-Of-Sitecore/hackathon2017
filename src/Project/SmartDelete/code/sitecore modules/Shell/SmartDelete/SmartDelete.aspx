@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SmartDelete.aspx.cs" Inherits="JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete.SmartDelete" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">

@@ -132,6 +132,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore modules\Shell\SmartDelete\SmartDelete.aspx.cs">
+      <DependentUpon>SmartDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\SmartDelete\SmartDelete.aspx.designer.cs">
+      <DependentUpon>SmartDelete.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
