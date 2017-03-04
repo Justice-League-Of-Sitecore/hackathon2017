@@ -67,6 +67,7 @@
     <OutputPath>.\bin\Cacy\</OutputPath>
     <DisableFileDeployment>False</DisableFileDeployment>
     <EnableValidations>False</EnableValidations>
+    <ValidationSettingsFilePath>.\JLS.SmartDelete.TDS.Master_Cacy.xml</ValidationSettingsFilePath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Stocker' ">
     <DebugSymbols>true</DebugSymbols>

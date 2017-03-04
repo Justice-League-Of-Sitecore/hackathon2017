@@ -2,6 +2,7 @@
 using Sitecore.Diagnostics;
 using System;
 using System.IO;
+using JLS.Foundation.Logging;
 
 namespace JLS.Foundation.Serialization
 {
@@ -20,7 +21,7 @@ namespace JLS.Foundation.Serialization
 
                 if (itemToSerialize.HasChildren)
                 {
-                    if(!SerializeTree(itemToSerialize)) throw new Exception("Error serializing item children.");
+                    if (!SerializeTree(itemToSerialize)) throw new Exception("Error serializing item children.");
                 }
                 else
                 {
@@ -31,7 +32,7 @@ namespace JLS.Foundation.Serialization
             }
             catch (Exception ex)
             {
-               Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
+                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
                 return false;
             }
         }
@@ -52,7 +53,7 @@ namespace JLS.Foundation.Serialization
             }
             catch (Exception ex)
             {
-                Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
+                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
                 return false;
             }
         }
@@ -74,12 +75,12 @@ namespace JLS.Foundation.Serialization
             }
             catch (IOException ioex)
             {
-                Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error IO occurred creating the serialization directory: {ioex.Message}", ioex);
+                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An IO error occurred creating the serialization directory: {ioex.Message}", ioex);
                 return false;
             }
             catch (Exception ex)
             {
-                Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error IO occurred creating the serialization directory: {ex.Message}", ex);
+                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred creating the serialization directory: {ex.Message}", ex);
                 return false;
             }
         }
