@@ -31,7 +31,7 @@ If you have any questions, comments, or suggegstions with the Smart Delete modul
 
 Enjoy!
 
-| [![Eric Stafford](https://avatars2.githubusercontent.com/u/9593511?v=3&s=220)](https://github.com/5up3rman) | [![Bill Cacy](https://avatars3.githubusercontent.com/u/4210256?v=3&s=220)](https://github.com/BillCacy) | [![Scott Stocker](https://avatars0.githubusercontent.com/u/22794?v=3&s=220)](https://github.com/sestocker) |
+| [![Eric Stafford](https://avatars2.githubusercontent.com/u/9593511?v=3&s=220)](https://github.com/5up3rman) | [![Bill Cacy](https://pbs.twimg.com/profile_images/718146990484271104/IV--ElH_.jpg)](https://github.com/BillCacy) | [![Scott Stocker](https://avatars0.githubusercontent.com/u/22794?v=3&s=220)](https://github.com/sestocker) |
 ---|---|---
 | Eric Stafford | Bill Cacy | Scott Stocker |
 | Senior Sitecore Developer | Lead Sitecore Developer | Sitecore Architect |
