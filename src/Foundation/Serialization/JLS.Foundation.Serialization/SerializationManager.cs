@@ -1,23 +1,22 @@
-﻿using Sitecore.Data.Items;
+﻿using JLS.Foundation.Logging;
+using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using System;
-using System.IO;
-using JLS.Foundation.Logging;
 
 namespace JLS.Foundation.Serialization
 {
     public static class SerializationManager
     {
-        private static readonly string SerializationDirectory = $"{Sitecore.Configuration.Settings.DataFolder}\\SmartDelete";
+       // private static readonly string SerializationDirectory = $"{Sitecore.Configuration.Settings.DataFolder}\\SmartDelete";
 
         public static bool SerializeItem(Item itemToSerialize)
         {
             try
             {
-                if (!SerializationDirectoryExists())
-                {
-                    if (!CreateSerializationDirectory()) throw new Exception("Error creating serialization directory");
-                }
+                //if (!SerializationDirectoryExists())
+                //{
+                //    if (!CreateSerializationDirectory()) throw new Exception("Error creating serialization directory");
+                //}
 
                 if (itemToSerialize.HasChildren)
                 {
@@ -25,7 +24,7 @@ namespace JLS.Foundation.Serialization
                 }
                 else
                 {
-                    Sitecore.Data.Serialization.Manager.DumpItem(SerializationDirectory, itemToSerialize);
+                    Sitecore.Data.Serialization.Manager.DumpItem( itemToSerialize);
                 }
 
                 return true;
@@ -44,10 +43,10 @@ namespace JLS.Foundation.Serialization
             {
                 foreach (var child in rootItemToSerialize.Axes.GetDescendants())
                 {
-                    Sitecore.Data.Serialization.Manager.DumpItem(SerializationDirectory, child);
+                    Sitecore.Data.Serialization.Manager.DumpItem( child);
                 }
 
-                Sitecore.Data.Serialization.Manager.DumpItem(SerializationDirectory, rootItemToSerialize);
+                Sitecore.Data.Serialization.Manager.DumpItem( rootItemToSerialize);
 
                 return true;
             }
@@ -58,31 +57,31 @@ namespace JLS.Foundation.Serialization
             }
         }
 
-        private static bool SerializationDirectoryExists()
-        {
-            return Directory.Exists(SerializationDirectory);
-        }
+        //private static bool SerializationDirectoryExists()
+        //{
+        //    return Directory.Exists(SerializationDirectory);
+        //}
 
-        private static bool CreateSerializationDirectory()
-        {
-            try
-            {
-                if (SerializationDirectoryExists()) return true;
+        //private static bool CreateSerializationDirectory()
+        //{
+        //    try
+        //    {
+        //        if (SerializationDirectoryExists()) return true;
 
-                Directory.CreateDirectory(SerializationDirectory);
+        //        Directory.CreateDirectory(SerializationDirectory);
 
-                return true;
-            }
-            catch (IOException ioex)
-            {
-                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An IO error occurred creating the serialization directory: {ioex.Message}", ioex);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred creating the serialization directory: {ex.Message}", ex);
-                return false;
-            }
-        }
+        //        return true;
+        //    }
+        //    catch (IOException ioex)
+        //    {
+        //        SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An IO error occurred creating the serialization directory: {ioex.Message}", ioex);
+        //        return false;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        SmartDeleteLogger.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred creating the serialization directory: {ex.Message}", ex);
+        //        return false;
+        //    }
+        //}
     }
 }

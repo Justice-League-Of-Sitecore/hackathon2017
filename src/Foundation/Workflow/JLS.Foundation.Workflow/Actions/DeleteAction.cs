@@ -1,5 +1,6 @@
 ﻿using JLS.Foundation.Constants;
 using JLS.Foundation.Logging;
+using Sitecore.Configuration;
 using Sitecore.Data.Items;
 using Sitecore.Workflows;
 using Sitecore.Workflows.Simple;
@@ -24,10 +25,10 @@ namespace JLS.Foundation.Workflow.Actions
                     return;
                 }
 
-                //if (Settings.RecycleBinActive)
-                //    item.Recycle();
-                //else
-                //    item.Delete();
+                if (Settings.RecycleBinActive)
+                    item.Recycle();
+                else
+                    item.Delete();
             }
         }
 
