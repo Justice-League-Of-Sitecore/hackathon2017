@@ -22,6 +22,15 @@ namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// templateList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList templateList;
+        
+        /// <summary>
         /// updateTemplates control.
         /// </summary>
         /// <remarks>

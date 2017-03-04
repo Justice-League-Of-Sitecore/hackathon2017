@@ -3,6 +3,7 @@ using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
 using System;
+using System.Linq;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -29,7 +30,7 @@ namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete
                 return;
             }
 
-            ShowTree(templateRootItem, Tree);
+            ShowTree(templateRootItem, templateList);
         }
 
 
@@ -50,13 +51,8 @@ namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete
             return false;
         }
 
-        private void ShowTree(Item item, HtmlGenericControl cell)
+        private void ShowTree(Item item, ListControl chkBoxList)
         {
-            var cell1 = new HtmlGenericControl("div");
-            cell1.Attributes["class"] = "Scroller";
-            cell.Controls.Add(cell1);
-
-            var list = new CheckBoxList();
             var descendents = item.Axes.GetDescendants();
             //loop through, exclude branches/system, create checkbox for each template
             foreach (var d in descendents)
@@ -65,16 +61,15 @@ namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete
                     || d.Paths.Path.ToLower().Contains("sitecore/templates/system")
                     || d.Paths.Path.ToLower().Contains("sitecore/templates/sample")
                     || d.Paths.Path.ToLower().Contains("sitecore/templates/list manager")
-                    || d.Paths.Path.ToLower().Contains("__standard values")) continue;
+                    || d.Paths.Path.ToLower().Contains("__standard values")
+                    || d.Paths.Path.ToLower().Contains("/smart delete")) continue;
 
                 var listItem = new ListItem();
                 var iconImage = ThemeManager.GetIconImage(d, 16, 16, "absmiddle", "0px 2px 0px 0px");
                 listItem.Text = $"{iconImage} {d.Paths.Path}";
                 listItem.Value = d.ID.ToString();
-                list.Items.Add(listItem);
+                chkBoxList.Items.Add(listItem);
             }
-
-            cell.Controls.Add(list);
         }
 
         /// <summary>
@@ -84,7 +79,19 @@ namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete
         /// <param name="e"></param>
         protected void updateTemplates_Click(object sender, EventArgs e)
         {
+            var selectedValues = templateList.Items.Cast<ListItem>().Where(li => li.Selected).Select(li => li.Value).ToList();
 
+            var masterDb = Factory.GetDatabase("master");
+            var deleteTemplateId = "{FA3E3E0B-0ADC-4FC5-97ED-354AF59FB964}";
+            foreach (var selectedItem in selectedValues)
+            {
+                var item = masterDb.GetItem(new ID(selectedItem));
+                if (item == null) continue;
+                var existingTemplates = item.Fields["__Base template"].Value;
+                item.Editing.BeginEdit();
+                item.Fields["__Base template"].Value = $"{existingTemplates}|{deleteTemplateId}";
+                item.Editing.EndEdit();
+            }
         }
     }
 }

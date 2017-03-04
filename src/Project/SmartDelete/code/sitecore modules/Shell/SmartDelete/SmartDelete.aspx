@@ -20,21 +20,19 @@
                 <p>This process will add the necessary template to the inheritance chain. Existing inheritance options will be unaltered. We are simply adding an additional item to the list.</p>
 
                 <div class="content">
-                    <div id="Tree" class="tree" runat="server"></div>
+                    <asp:CheckBoxList runat="server" ID="templateList" />
+                    <%-- <div id="Tree" class="tree" runat="server"></div>--%>
                 </div>
-
-
 
                 <asp:Button ID="updateTemplates" runat="server" Text="Update Selected Templates" OnClick="updateTemplates_Click" />
             </div>
-
 
             <div class="wf-configsection">
                 <h2><span>Remember Eric's mom loves you!!</span></h2>
             </div>
 
             <div class="wf-configsection">
-                <asp:Literal ID="resultsLit" runat="server"/>
+                <asp:Literal ID="resultsLit" runat="server" />
             </div>
         </div>
     </form>
