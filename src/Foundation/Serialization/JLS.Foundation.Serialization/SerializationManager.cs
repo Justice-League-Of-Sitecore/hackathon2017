@@ -11,29 +11,29 @@ namespace JLS.Foundation.Serialization
 
         public static bool SerializeItem(Item itemToSerialize)
         {
-            try
-            {
-                if (!SerializationDirectoryExists())
-                {
-                    if (!CreateSerializationDirectory()) throw new Exception("Error creating serialization directory");
-                }
+            //try
+            //{
+            //    if (!SerializationDirectoryExists())
+            //    {
+            //        //if (!CreateSerializationDirectory()) throw new Exception("Error creating serialization directory");
+            //    }
 
-                if (itemToSerialize.HasChildren)
-                {
-                    if(!SerializeTree(itemToSerialize)) throw new Exception("Error serializing item children.");
-                }
-                else
-                {
+            //    if (itemToSerialize.HasChildren)
+            //    {
+            //        //if(!SerializeTree(itemToSerialize)) throw new Exception("Error serializing item children.");
+            //    }
+            //    else
+            //    {
                     Sitecore.Data.Serialization.Manager.DumpItem(SerializationDirectory, itemToSerialize);
-                }
+            //    }
 
                 return true;
-            }
-            catch (Exception ex)
-            {
-               Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
-                return false;
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //   Log.Error($"JLS.FOUNDATION.SERIALIZATION: An error occurred during serialization: {ex.Message}", ex);
+            //    return false;
+            //}
         }
 
         private static bool SerializeTree(Item rootItemToSerialize)
