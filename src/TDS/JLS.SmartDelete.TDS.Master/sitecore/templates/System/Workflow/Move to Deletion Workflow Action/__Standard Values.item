@@ -14,13 +14,13 @@ created: 20170304T171713Z
 field: {A291A22B-99E2-46BB-A27B-8EC744275396}
 name: Type
 key: type
-content-length: 50
+content-length: 74
 
-JLS.Foundation.Workflow.Actions.MoveWorkflowAction
+JLS.Foundation.Workflow.Actions.MoveWorkflowAction,JLS.Foundation.Workflow
 ----version----
 language: en
 version: 1
-revision: 0099d303-8a4f-452f-83f0-86627659f21e
+revision: 9dd3ae4e-9f23-4838-a692-c5fca8aadab3
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -49,14 +49,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-0099d303-8a4f-452f-83f0-86627659f21e
+9dd3ae4e-9f23-4838-a692-c5fca8aadab3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170304T173307Z
+20170304T222530Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

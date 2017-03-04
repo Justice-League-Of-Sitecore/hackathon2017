@@ -14,13 +14,13 @@ created: 20170304T132157Z
 field: {A291A22B-99E2-46BB-A27B-8EC744275396}
 name: Type
 key: type
-content-length: 44
+content-length: 68
 
-JLS.Foundation.Workflow.Actions.DeleteAction
+JLS.Foundation.Workflow.Actions.DeleteAction,JLS.Foundation.Workflow
 ----version----
 language: en
 version: 1
-revision: bf75050e-7968-47c4-8cff-d8316231d90a
+revision: 19fa23e0-115f-40c6-ac6f-ee945033ddee
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -49,14 +49,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-bf75050e-7968-47c4-8cff-d8316231d90a
+19fa23e0-115f-40c6-ac6f-ee945033ddee
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20170304T133139Z
+20170304T221809Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
