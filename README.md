@@ -13,6 +13,7 @@ Smart delete is a module for Sitecore 8.x that provides additional functionality
 - of Sitecore. We beleive the concepts and code for this module is solid
 - and can be used as a base for your own production implementation with 
 - proper testing and customized to your organization's governance needs.
+```
 
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
