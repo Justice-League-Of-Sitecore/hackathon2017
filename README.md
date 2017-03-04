@@ -21,11 +21,11 @@ Smart delete provides governance around item deletion in Sitecore. When content 
 
 Smart delete allows content authors to delete a content item by simply checking a box so that the deletion of content goes through a workflow just like content creation and editing.
 
-[screenshot]
+![Request Delete](https://raw.githubusercontent.com/Justice-League-Of-Sitecore/hackathon2017/develop/readme-RequestDelete.png)
 
 A workflow action will move any item marked for deletion to a special deletion workflow provided by the Smart Delete module. In addition to the better governance of content, the deletion workflow also automatically serializes the deleted content for easy restore and logs to a custom log file for easy auditing.
 
-[screenshot]
+![Deletion Workflow](https://raw.githubusercontent.com/Justice-League-Of-Sitecore/hackathon2017/develop/readme-deletionworkflow.png)
 
 If you have any questions, comments, or suggegstions with the Smart Delete module, please report them in the Issue Tracker. Also feel free to reach out to the authors on Twitter or Sitecore Slack.
 
