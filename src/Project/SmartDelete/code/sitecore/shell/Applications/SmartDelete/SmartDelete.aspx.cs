@@ -1,15 +1,15 @@
-﻿using Sitecore.Configuration;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.Data.Managers;
-using System;
+﻿using System;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using Sitecore.Sites;
+using JLS.Foundation.Constants;
+using Sitecore.Configuration;
+using Sitecore.Data;
+using Sitecore.Data.Items;
+using Sitecore.Data.Managers;
 
-namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete
+namespace JLS.SmartDelete.Website.sitecore.shell.Applications.SmartDelete
 {
     public partial class SmartDelete : Page
     {
@@ -49,8 +49,6 @@ namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete
             var url = site != null ? site.LoginPage : "";
             if (url.Length > 0)
                 Response.Redirect(url, true);
-            else
-                Response.Redirect("/sitecore", true);
             return false;
         }
 
@@ -83,16 +81,14 @@ namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete
         protected void updateTemplates_Click(object sender, EventArgs e)
         {
             var selectedValues = templateList.Items.Cast<ListItem>().Where(li => li.Selected).Select(li => li.Value).ToList();
-
             var masterDb = Factory.GetDatabase("master");
-            var deleteTemplateId = "{FA3E3E0B-0ADC-4FC5-97ED-354AF59FB964}";
             foreach (var selectedItem in selectedValues)
             {
                 var item = masterDb.GetItem(new ID(selectedItem));
                 if (item == null) continue;
                 var existingTemplates = item.Fields["__Base template"].Value;
                 item.Editing.BeginEdit();
-                item.Fields["__Base template"].Value = $"{existingTemplates}|{deleteTemplateId}";
+                item.Fields["__Base template"].Value = $"{existingTemplates}|{SmartDeleteConstants.TemplateIds.ItemBase}";
                 item.Editing.EndEdit();
             }
         }

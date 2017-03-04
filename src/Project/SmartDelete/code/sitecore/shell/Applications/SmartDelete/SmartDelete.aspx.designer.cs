@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JLS.SmartDelete.Website.sitecore_modules.Shell.SmartDelete {
+namespace JLS.SmartDelete.Website.sitecore.shell.Applications.SmartDelete {
     
     
     public partial class SmartDelete {

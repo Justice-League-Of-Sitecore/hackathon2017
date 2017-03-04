@@ -127,15 +127,15 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="sitecore modules\Shell\SmartDelete\SmartDelete.aspx" />
+    <Content Include="sitecore\shell\Applications\SmartDelete\SmartDelete.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sitecore modules\Shell\SmartDelete\SmartDelete.aspx.cs">
+    <Compile Include="sitecore\shell\Applications\SmartDelete\SmartDelete.aspx.cs">
       <DependentUpon>SmartDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sitecore modules\Shell\SmartDelete\SmartDelete.aspx.designer.cs">
+    <Compile Include="sitecore\shell\Applications\SmartDelete\SmartDelete.aspx.designer.cs">
       <DependentUpon>SmartDelete.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
