@@ -142,6 +142,7 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Properties\PublishProfiles\JLS.SmartDelete.Website-Cacy.pubxml" />
+    <None Include="Properties\PublishProfiles\JLS.SmartDelete.Website-Release.pubxml" />
     <None Include="Properties\PublishProfiles\Stafford.pubxml" />
   </ItemGroup>
   <ItemGroup>

@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\JLS.Foundation.SmartDelete-Cacy.pubxml" />
+    <None Include="Properties\PublishProfiles\JLS.Foundation.SmartDelete-Release.pubxml" />
     <None Include="Properties\PublishProfiles\Stafford.pubxml" />
   </ItemGroup>
   <ItemGroup>
